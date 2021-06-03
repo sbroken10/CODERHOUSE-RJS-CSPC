@@ -15,3 +15,13 @@ code {
   font-family: 'Bebas Neue', cursive;
   font-size: 40px;
 }
+.cardcontainer{
+ 
+  width: auto;
+  height: 10vh;
+  background-color: #C2361D;
+}
+.cardElements{
+  display: block;
+  color: white;
+}
