@@ -1,10 +1,21 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette:{
+    primary:{
+      main: '#C2361D'
+    },
+   secondary:{
+      main: '#752112' 
+   }
+  }
+})
 
 function App() {
   return (
-   <ThemeProvider>  
+   <ThemeProvider theme={theme}>  
      <NavBar/>
   </ThemeProvider> 
   );

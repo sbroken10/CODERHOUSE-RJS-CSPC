@@ -1,5 +1,6 @@
 import React from 'react'
 import {AppBar, Button, makeStyles, Toolbar, Typography} from '@material-ui/core'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const styles = makeStyles(theme => ({
 offset: theme.mixins.toolbar,
@@ -18,13 +19,12 @@ const NavBar = () => {
     return (
         <div>
             <AppBar>
-                <Toolbar>
+                <Toolbar color="secondary">
                     <Typography variant="text" className={classes.buttons}>
-                        FoCa
+                        <h1 className="focaTitle">FoCa</h1>
                     </Typography>
-                
                 <Button variant="text" color="inherit">
-                    {Navigation[0]}
+                {Navigation[0]}
                 </Button>
                 <Button variant="text" color="inherit">
                 {Navigation[1]}
@@ -34,6 +34,9 @@ const NavBar = () => {
                 </Button>
                 <Button variant="text" color="inherit">
                 {Navigation[3]}
+                </Button>
+                <Button variant="button" >
+                <ShoppingCartIcon color="secondary" />
                 </Button>
                 </Toolbar>
             </AppBar>
