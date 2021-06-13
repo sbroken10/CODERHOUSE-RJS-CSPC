@@ -1,16 +1,16 @@
-.focaTitle {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 40px;
-}
 .cardcontainer{
-  width: 15vh;
-  height: 15vh;
+  width: 30vh;
+  height: 50vh;
   background-color: #C2361D;
   margin-top: 60px;
   margin-left: 15px;
+  border-radius: 8px;
 }
 .cardElements{
   margin-left: 10px;
   display: block;
   color: white;
+}
+.botonComp{
+  background-color: #752112;
 }

@@ -1,8 +1,8 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {makeStyles} from '@material-ui/core'
-import {MainContainer} from './components/MainContainer'
+import {ItemCountCard} from './components/ItemCountCard'
+
 
 const theme = createMuiTheme({
   palette:{
@@ -14,17 +14,20 @@ const theme = createMuiTheme({
    }
   }
 })
-const styles = makeStyles(theme => ({
-  offset: theme.mixins.toolbar
-  }))
-
 function App() {
-  const classes = styles()
   return (
    <ThemeProvider theme={theme}>  
      <NavBar/>
-     <MainContainer precio="Aun no definido" tamaño="Aun no definido" estado="Disponible" className="Contenedor">
-     </MainContainer >
+     <div className="mainContainer">
+    <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="/img/F1.jpeg" cantidadDisponible="10">
+     </ItemCountCard >
+     <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="" cantidadDisponible="5">
+     </ItemCountCard >
+     <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="" cantidadDisponible="3">
+     </ItemCountCard >
+     
+     </div>
+     
   </ThemeProvider> 
   );
 }

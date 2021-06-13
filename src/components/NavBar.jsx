@@ -2,9 +2,6 @@ import React from 'react'
 import {AppBar, Button, makeStyles, Toolbar, Typography} from '@material-ui/core'
 import CartWidget from './CartWidget';
 
-
-
-
 const styles = makeStyles(theme => ({
 offset: theme.mixins.toolbar,
 buttons:{

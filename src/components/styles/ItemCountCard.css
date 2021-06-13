@@ -1,0 +1,16 @@
+.cardcontainer{
+  width: 30vh;
+  height: 50vh;
+  background-color: #C2361D;
+  margin-top: 60px;
+  margin-left: 15px;
+  border-radius: 8px;
+}
+.cardElements{
+  margin-left: 10px;
+  display: block;
+  color: white;
+}
+.botonComp{
+  background-color: #752112;
+}
