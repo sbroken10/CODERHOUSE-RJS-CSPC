@@ -1,7 +1,9 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {ItemCountCard} from './components/ItemCountCard'
+import { ItemListContainer } from './components/ItemListContainer';
+
+
 
 
 const theme = createMuiTheme({
@@ -19,13 +21,7 @@ function App() {
    <ThemeProvider theme={theme}>  
      <NavBar/>
      <div className="mainContainer">
-    <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="/img/F1.jpeg" cantidadDisponible="10">
-     </ItemCountCard >
-     <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="" cantidadDisponible="5">
-     </ItemCountCard >
-     <ItemCountCard precio="Aun no definido" tamaño="Aun no definido" imag="" cantidadDisponible="3">
-     </ItemCountCard >
-     
+    <ItemListContainer/>
      </div>
      
   </ThemeProvider> 
