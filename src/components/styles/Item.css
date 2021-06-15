@@ -1,0 +1,31 @@
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vh;
+    height: 50vh;
+    background-color: #C2361D;
+    margin-top: 60px;
+    margin-left: 15px;
+    border-radius: 8px;
+  }
+  .cardElements{
+    margin-left: 10px;
+    display: block;
+    color: white;
+  }
+  
+
+  .imgAttr{
+    background-color: #752112;
+  }
+
+.pTxtElement {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+  }
+.sTxtElement {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 10px;
+  }  

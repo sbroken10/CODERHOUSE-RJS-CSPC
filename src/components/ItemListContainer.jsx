@@ -1,27 +1,25 @@
 import { ItemCount } from './ItemCount';
-import {Typography} from '@material-ui/core'
-import React from 'react'
+import ItemList from './ItemList';
+import React, {useState, useEffect} from 'react'
+
+export const ItemListContainer = () => {
 
 
-export const ItemListContainer = props => {
-    const provisional = props
+    const [itemC, setItem] = useState('')
+
+    useEffect(() => {
+    const itemCreation = new Promise((resolve, reject)=> {
+        const time = setTimeout(() =>{
+        resolve(<ItemList></ItemList>)    
+        }, 2000)
+    })
+    itemCreation.then((itemC) => {
+    setItem(itemC)
+    })}, [])
+
     return (
         <>
-        <Typography>
-            This is an ItemListContainer
-        </Typography>
-        <div>
-         <ItemCount  cantidadDisponible={10}>
-         </ItemCount>
-        </div>
-        <div>
-        <ItemCount  cantidadDisponible={5}>
-        </ItemCount>
-        </div>
-        <div>
-        <ItemCount  cantidadDisponible={3}>
-        </ItemCount>
-        </div>
+        {itemC}       
         </>
         
     )
