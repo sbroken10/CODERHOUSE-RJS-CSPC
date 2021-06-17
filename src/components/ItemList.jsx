@@ -4,7 +4,7 @@ import './styles/ItemList.css'
 
 export const ItemList = props => {
 
-    const {pr} = props
+    const { pr } = props
 
     return (
 
