@@ -37,10 +37,4 @@
   }
 }
 
-.mainContainer{
-   flex-direction: row;
-   display: flex;
-   justify-content: space-around;
-   align-items: flex-start;
-   margin-top: 60px;
-}
+

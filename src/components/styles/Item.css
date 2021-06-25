@@ -1,14 +1,14 @@
 .itemContainer{
-    display: flex;
+    
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 30vh;
+    width: 32%;
     height: 50vh;
-    background-color: #C2361D;
+    border: 2px solid grey;
     margin-top: 60px;
-    margin-left: 15px;
     border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75)
   }
   .cardElements{
     margin-left: 10px;
@@ -24,6 +24,49 @@
     font-size: 30px;
   }
 .sTxtElement {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 10px;
-  }  
+    font-family: 'Bebas Neue', cursive !important;
+    color: honeydew;
+    width: 60%;
+    height: 60%;
+    position: relative;
+    left: 5%;
+    top: 2%;
+  }
+
+.algButton{
+width: 80%;
+position: relative;
+left: 10%;
+
+
+
+}
+.itemImgs {
+  margin-top: 0;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.detailMenuContainer{
+display: flex;
+flex-direction: column;
+
+
+}
+.overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background:rgba(117, 33, 18, 0.781) ;
+  width: 100%;
+  height: 50%;
+  /* overflow: hidden; */
+  transition: .5s ease;
+  
+}
+
+/* #img:hover .overlay{
+  height:50%;
+  cursor: pointer;
+} */
