@@ -33,7 +33,7 @@ const NavBar = () => {
                     </Typography>
 
                     <Button variant="text" color="inherit">
-                        <Link to="/" className={classes.links}>
+                        <Link to="/CODERHOUSE-RJS-CSPC" className={classes.links}>
                             {Navigation[0]}
                         </Link>
                     </Button>

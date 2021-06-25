@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react'
+// import React, { useState, useEffect } from 'react'
 import { ItemDetail } from './ItemDetail'
 import one from '../../../assets/1.JPG'
 import two from '../../../assets/2.JPG'
@@ -10,14 +10,15 @@ import seven from '../../../assets/7.jpg'
 import eight from '../../../assets/8.jpg'
 import nine from '../../../assets/9.jpg'
 import ten from '../../../assets/10.jpg'
-import { useParams } from 'react-router-dom'
+
 
 const inventario = [
     {
         id: '1',
-        nombre: "Pino tallado con suculentas",
+        nombre: "Bonsai Diosme",
         precio: "35 USD",
         tamaño: "65cm x 15cm",
+        descripcion: "Bonsai Diosme, edad de 7 años plantado en un tronco de pino tallado a mano",
         imgs: one
 
     },
@@ -26,6 +27,7 @@ const inventario = [
         nombre: "Jade Golum",
         precio: "4 USD",
         tamaño: "10cm x 5cm",
+        descripcion: "asd",
         imgs: two,
 
     },
@@ -34,6 +36,7 @@ const inventario = [
         nombre: "Bonsai Pino Espinoso",
         precio: "45 USD",
         tamaño: "45cm x 50cm",
+        descripcion: "asd",
         imgs: three,
 
     },
@@ -42,6 +45,7 @@ const inventario = [
         nombre: "Bonsai Pino Estrella",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
+        descripcion: "asd",
         imgs: four,
 
     },
@@ -50,6 +54,7 @@ const inventario = [
         nombre: "Bonsai Pino Estrellaasd",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
+        descripcion: "asd",
         imgs: five,
 
     },
@@ -101,23 +106,39 @@ const inventario = [
 ]
 
 
+
+
+// const itemDetailCreation = () => {
+//     return new Promise((resolve, reject) => {
+//         resolve(inventario)
+//     })
+// }
+
 export const ItemDetailContainer = () => {
 
-    
+    // const [itemD, setItemD] = useState([])
 
-    const {identi} = useParams();
-    console.log(identi)
-    console.log(inventario)
-    
-    
-   
-    const resultado = inventario.find( elemento => elemento.id === identi );
-    console.log(resultado)
+    // const passDetails = () => {
+    //     itemDetailCreation().then(
+    //         listData => { setItemD(listData) })
+    // }
+
+    // useEffect(() => {
+    //     passDetails();
+    // }, [])
+
+
+    // console.log(itemD)
+
+
+
 
     return (
-        <div>
-            <ItemDetail details={resultado}></ItemDetail>      
-        </div>
+        
+            <div>
+                <ItemDetail details={inventario} />
+            </div>
+        
     )
 }
 

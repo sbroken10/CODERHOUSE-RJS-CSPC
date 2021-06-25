@@ -25,7 +25,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <NavBar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/CODERHOUSE-RJS-CSPC">
             <div className="mainContainer">
               <ItemListContainer />
             </div>
@@ -37,6 +37,9 @@ function App() {
             <div>
               <ItemDetailContainer/>
             </div>
+          </Route>
+          <Route exact path='/carrito'>
+          <h2>Proximamente</h2>
           </Route>
         </Switch>
       </ThemeProvider>

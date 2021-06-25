@@ -1,6 +1,4 @@
-import { ItemCount } from './ItemCount';
 import { ItemList } from './ItemList';
-import { ItemDetailContainer } from './ItemDetailContainer';
 import React, { useState, useEffect } from 'react'
 import one from '../../../assets/1.JPG'
 import two from '../../../assets/2.JPG'
