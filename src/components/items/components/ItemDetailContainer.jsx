@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom'
 
 const inventario = [
     {
-        id: 1,
+        id: '1',
         nombre: "Pino tallado con suculentas",
         precio: "35 USD",
         tamaño: "65cm x 15cm",
@@ -22,7 +22,7 @@ const inventario = [
 
     },
     {
-        id: 2,
+        id: '2',
         nombre: "Jade Golum",
         precio: "4 USD",
         tamaño: "10cm x 5cm",
@@ -30,7 +30,7 @@ const inventario = [
 
     },
     {
-        id: 3,
+        id: '3',
         nombre: "Bonsai Pino Espinoso",
         precio: "45 USD",
         tamaño: "45cm x 50cm",
@@ -38,7 +38,7 @@ const inventario = [
 
     },
     {
-        id: 4,
+        id: '4',
         nombre: "Bonsai Pino Estrella",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
@@ -46,7 +46,7 @@ const inventario = [
 
     },
     {
-        id: 5,
+        id: '5',
         nombre: "Bonsai Pino Estrellaasd",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
@@ -54,7 +54,7 @@ const inventario = [
 
     },
     {
-        id: 6,
+        id: '6',
         nombre: "Pino tallado con suculentasdasd",
         precio: "35 USD",
         tamaño: "65cm x 15cm",
@@ -63,7 +63,7 @@ const inventario = [
 
     },
     {
-        id: 7,
+        id: '7',
         nombre: "Jade Golumassd",
         precio: "4 USD",
         tamaño: "10cm x 5cm",
@@ -72,7 +72,7 @@ const inventario = [
 
     },
     {
-        id: 8,
+        id: '8',
         nombre: "Bonsai Pino Espinosoasda",
         precio: "45 USD",
         tamaño: "45cm x 50cm",
@@ -81,7 +81,7 @@ const inventario = [
 
     },
     {
-        id: 9,
+        id: '9',
         nombre: "Bonsai Pino Estrellaasdad",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
@@ -90,7 +90,7 @@ const inventario = [
 
     },
     {
-        id: 10,
+        id: '10',
         nombre: "Bonsai Pino Estrellaasda",
         precio: "15 USD",
         tamaño: "30cm x 20cm",
