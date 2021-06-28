@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ItemDetail } from './ItemDetail'
 import one from '../../../assets/1.JPG'
 import two from '../../../assets/2.JPG'
@@ -108,37 +108,34 @@ const inventario = [
 
 
 
-// const itemDetailCreation = () => {
-//     return new Promise((resolve, reject) => {
-//         resolve(inventario)
-//     })
-// }
+const itemDetailCreation = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(inventario), 2000);
+    })
+}
 
 export const ItemDetailContainer = () => {
 
-    // const [itemD, setItemD] = useState([])
+    const [itemD, setItemD] = useState([])
 
-    // const passDetails = () => {
-    //     itemDetailCreation().then(
-    //         listData => { setItemD(listData) })
-    // }
+    const passDetails = () => {
+        itemDetailCreation().then(
+            listData => { setItemD(listData) })
+    }
 
-    // useEffect(() => {
-    //     passDetails();
-    // }, [])
-
-
-    // console.log(itemD)
+    useEffect(() => {
+        passDetails();
+    }, [])
 
 
+    console.log(itemD)
+
+    
 
 
     return (
-        
-            <div>
-                <ItemDetail details={inventario} />
-            </div>
-        
+                    
+        itemD.length == 0? <h1>Cargando</h1> : <ItemDetail details={itemD}/>
     )
 }
 
