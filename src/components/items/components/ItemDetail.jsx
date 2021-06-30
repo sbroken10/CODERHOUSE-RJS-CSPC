@@ -1,9 +1,11 @@
 import { Typography, Button } from '@material-ui/core';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link } from 'react-router-dom';
+import { ItemCount } from './ItemCount'
+import { ItemAddCart } from './ItemAddCart'
 
 function randomI(min, max) {//funcion para crear un idice random
     var numPosibilidades = max - min;
@@ -17,6 +19,19 @@ function randomI(min, max) {//funcion para crear un idice random
 
 
 export const ItemDetail = props => {
+    
+const [counterFlag, setCounterFlag] = useState(true)
+
+let flagger = false;
+
+    useEffect(() => {
+        setCounterFlag(false);
+    }, [flagger])
+
+    function flag() {
+        flagger = true
+        console.log(flagger)
+    }
 
     const { details } = props;
     console.log(details)
@@ -45,6 +60,10 @@ export const ItemDetail = props => {
     const random4 = details.find(elementoR => elementoR.id === randomI4);
     console.log(random4)
 
+
+
+
+
     return (
         <div className="detailContainer">
             <div className="imgContainer">
@@ -58,12 +77,9 @@ export const ItemDetail = props => {
                     <Typography variant="h5" className="TxtDetailElementP">{resultado.precio}</Typography>
                 </div>
                 <div className="buttonContainer">
-                    <Link to={`/carrito`}>
-                        <Button variant="contained" color="primary" startIcon={<ShopIcon/>} className="detailButton">
-                            Agregar al carrito
-                        </Button>
-                    </Link>
-                    <div />
+                    <div>
+                        {counterFlag} ? <ItemCount stock={resultado.stock} id={resultado.id} addcart={flag} /> : <ItemAddCart  />
+                    </div>
                     <div className="buttonContainer2">
                         <Link to={"/CODERHOUSE-RJS-CSPC"}>
                             <Button variant="contained" color="primary" className="detailButton">
@@ -74,13 +90,14 @@ export const ItemDetail = props => {
                 </div>
 
             </div>
+
             <div className="txtContainer2">
                 <div className="imgContainerS">
                     <img src={random1.imgs} alt={random1.nombre} className="itemImgs"></img>
                     <div className="overlay2">
                         <Link to={`/detalle/${random1.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon/>} className="SalgButton">
-                        
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+
                             </Button>
                         </Link>
                     </div>
@@ -88,10 +105,10 @@ export const ItemDetail = props => {
                 <div className="imgContainerS">
                     <img src={random2.imgs} alt={random2.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-                        
+
                         <Link to={`/detalle/${random2.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon/>} className="SalgButton">
-                                
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+
                             </Button>
                         </Link>
                     </div>
@@ -99,10 +116,10 @@ export const ItemDetail = props => {
                 <div className="imgContainerS">
                     <img src={random3.imgs} alt={random3.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-            
+
                         <Link to={`/detalle/${random3.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon/>} className="SalgButton">
-                                
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+
                             </Button>
                         </Link>
                     </div>
@@ -110,10 +127,10 @@ export const ItemDetail = props => {
                 <div className="imgContainerS">
                     <img src={random4.imgs} alt={random4.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-                        
+
                         <Link to={`/detalle/${random4.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon/>} className="SalgButton">
-                               
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+
                             </Button>
                         </Link>
                     </div>

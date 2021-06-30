@@ -129,7 +129,7 @@ export const ItemListContainer = () => {
 
     return (
         <>
-            <div><ItemList pr={itemC}></ItemList></div>
+            <ItemList pr={itemC}></ItemList>
 
         </>
 

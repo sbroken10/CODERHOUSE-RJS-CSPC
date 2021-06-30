@@ -19,6 +19,7 @@ const inventario = [
         precio: "35 USD",
         tamaño: "65cm x 15cm",
         descripcion: "Bonsai Diosme, edad de 7 años plantado en un tronco de pino tallado a mano",
+        stock: 4,
         imgs: one
 
     },
@@ -28,6 +29,7 @@ const inventario = [
         precio: "4 USD",
         tamaño: "10cm x 5cm",
         descripcion: "asd",
+        stock: 2,
         imgs: two,
 
     },
@@ -37,6 +39,7 @@ const inventario = [
         precio: "45 USD",
         tamaño: "45cm x 50cm",
         descripcion: "asd",
+        stock: 6,
         imgs: three,
 
     },
@@ -46,6 +49,7 @@ const inventario = [
         precio: "15 USD",
         tamaño: "30cm x 20cm",
         descripcion: "asd",
+        stock: 9,
         imgs: four,
 
     },
@@ -55,6 +59,7 @@ const inventario = [
         precio: "15 USD",
         tamaño: "30cm x 20cm",
         descripcion: "asd",
+        stock: 2,
         imgs: five,
 
     },
@@ -64,6 +69,7 @@ const inventario = [
         precio: "35 USD",
         tamaño: "65cm x 15cm",
         descripcion: "asd",
+        stock: 3,
         imgs: six,
 
     },
@@ -73,6 +79,7 @@ const inventario = [
         precio: "4 USD",
         tamaño: "10cm x 5cm",
         descripcion: "asd",
+        stock: 9,
         imgs: seven,
 
     },
@@ -82,6 +89,7 @@ const inventario = [
         precio: "45 USD",
         tamaño: "45cm x 50cm",
         descripcion: "asd",
+        stock: 5,
         imgs: eight,
 
     },
@@ -91,6 +99,7 @@ const inventario = [
         precio: "15 USD",
         tamaño: "30cm x 20cm",
         descripcion: "asd",
+        stock: 8,
         imgs: nine,
 
     },
@@ -100,11 +109,11 @@ const inventario = [
         precio: "15 USD",
         tamaño: "30cm x 20cm",
         descripcion: "asd",
+        stock: 2,
         imgs: ten,
 
     },
 ]
-
 
 
 
@@ -135,7 +144,7 @@ export const ItemDetailContainer = () => {
 
     return (
                     
-        itemD.length == 0? <h1>Cargando</h1> : <ItemDetail details={itemD}/>
+        itemD.length === 0? <h1>Cargando</h1> : <ItemDetail details={itemD}/>
     )
 }
 

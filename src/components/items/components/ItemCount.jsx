@@ -1,8 +1,9 @@
-import { Button, Card, CardContent, makeStyles, Typography } from '@material-ui/core'
+import { Button, CardContent, makeStyles, Typography } from '@material-ui/core'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import ShopIcon from '@material-ui/icons/Shop';
 import '../../styles/ItemCountCard.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 
@@ -13,13 +14,13 @@ const styles = makeStyles(theme => ({
   },
   details: {
     display: 'flex',
-    flexDirection: 'column',
-  },
-  content: {
-    flex: '1 0 auto',
-  },
-  cover: {
-    width: 151,
+    flexDirection: 'row',
+    width: '80%',
+    margin: 0,
+    justifyContent: 'center',
+    marginLeft: '8%',
+    backgroundColor: 'white',
+    borderRadius: '5px',
   },
   controls: {
     display: 'flex',
@@ -41,39 +42,48 @@ const styles = makeStyles(theme => ({
 
 
 export const ItemCount = props => {
-  const { cantidadDisponible } = props;
+  const { stock, id, addCart } = props;
   const classes = styles();
   const [contador, setContador] = useState(0);
+
+  useEffect(() => {
+    setContador(0);
+  }, [id])
+
   let contadorV = 0;
 
   const contadorSuma = () => {
     contadorV = contador + 1;
-    const disponible = contadorV > cantidadDisponible;
-    setContador(disponible ? cantidadDisponible : contadorV)
+    const disponible = contadorV > stock;
+    setContador(disponible ? stock : contadorV)
   }
   const contadorResta = () => {
     contadorV = contador - 1;
     const validador = contador <= 0
     setContador(validador ? 0 : contadorV)
   }
+
+
+
   return (
-    <Card className={classes.root}>
-      <div className={classes.details}>
-        <CardContent className={classes.cart}>
-          <Typography component="h5" variant="h5"> {contador} </Typography>
-        </CardContent>
+    <div className={classes.details}>
+      <div>
         <div className={classes.controls}>
           <Button onClick={contadorResta}><RemoveCircleOutlineIcon></RemoveCircleOutlineIcon></Button>
-          <Button onClick={contadorSuma}><AddCircleOutlineIcon></AddCircleOutlineIcon></Button>
-
         </div>
-        <div className={classes.cart}>
-          <Button>Agregar al carrito</Button>
+        <div>
+          <CardContent className={classes.cart}>
+            <Typography component="h5" variant="h5"> {contador} </Typography>
+          </CardContent>
+        </div>
+        <div className={classes.controls}>
+          <Button onClick={contadorSuma}><AddCircleOutlineIcon></AddCircleOutlineIcon></Button>
         </div>
       </div>
-
-
-    </Card>
+      <div >
+        <Button onClick={addCart} startIcon={<ShopIcon />}>Agregar al carrito</Button>
+      </div>
+    </div>
   )
 }
 
