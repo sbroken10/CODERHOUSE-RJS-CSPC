@@ -8,9 +8,9 @@ import React, { useEffect, useState } from 'react';
 
 
 const styles = makeStyles(theme => ({
-  root: {
+  container: {
     display: 'flex',
-    backgroundColor: '#C2361D',
+    flexDirection: 'column',
   },
   details: {
     display: 'flex',
@@ -22,6 +22,7 @@ const styles = makeStyles(theme => ({
     backgroundColor: 'white',
     borderRadius: '5px',
   },
+  
   controls: {
     display: 'flex',
     alignItems: 'center',
@@ -36,6 +37,12 @@ const styles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  add: {
+    justifyContent: 'center',
+    marginLeft: '14%',
+    marginTop: '5%',
+    color: "withe"
   }
 }))
 
@@ -66,8 +73,8 @@ export const ItemCount = props => {
 
 
   return (
-    <div className={classes.details}>
-      <div>
+    <div className={classes.container}>
+      <div className={classes.details}>
         <div className={classes.controls}>
           <Button onClick={contadorResta}><RemoveCircleOutlineIcon></RemoveCircleOutlineIcon></Button>
         </div>
@@ -80,8 +87,8 @@ export const ItemCount = props => {
           <Button onClick={contadorSuma}><AddCircleOutlineIcon></AddCircleOutlineIcon></Button>
         </div>
       </div>
-      <div >
-        <Button onClick={addCart} startIcon={<ShopIcon />}>Agregar al carrito</Button>
+      <div className={classes.add}>
+        <Button onClick={addCart} startIcon={<ShopIcon /> } variant="contained" color="primary">Agregar al carrito</Button>
       </div>
     </div>
   )

@@ -38,7 +38,7 @@ function App() {
               <ItemDetailContainer/>
             </div>
           </Route>
-          <Route exact path='/carrito'>
+          <Route exact path='/cart'>
           <h2>Proximamente</h2>
           </Route>
         </Switch>

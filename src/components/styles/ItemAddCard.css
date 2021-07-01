@@ -1,0 +1,15 @@
+.buttonContainer{
+
+    margin-top: 10%;
+    }
+
+.detailButton{
+
+width: 80%;
+position: relative;
+left: 8%;
+
+color: honeydew !important;
+margin-bottom: 3vh;
+
+}

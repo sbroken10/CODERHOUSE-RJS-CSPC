@@ -1,5 +1,5 @@
 import { Typography, Button } from '@material-ui/core';
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { useParams } from 'react-router-dom'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
@@ -19,19 +19,20 @@ function randomI(min, max) {//funcion para crear un idice random
 
 
 export const ItemDetail = props => {
-    
-const [counterFlag, setCounterFlag] = useState(true)
 
-let flagger = false;
-
-    useEffect(() => {
-        setCounterFlag(false);
-    }, [flagger])
+    const [cFlag, setCFlag] = useState(true)
 
     function flag() {
-        flagger = true
-        console.log(flagger)
+        setCFlag(false);
+        console.log(cFlag)
     }
+
+    
+    function unFlag() {
+        setCFlag(true);
+        console.log(cFlag)
+    }
+
 
     const { details } = props;
     console.log(details)
@@ -60,6 +61,7 @@ let flagger = false;
     const random4 = details.find(elementoR => elementoR.id === randomI4);
     console.log(random4)
 
+    const validador = cFlag ? <ItemCount stock={resultado.stock} id={resultado.id} addCart={flag} /> : <ItemAddCart/>
 
 
 
@@ -78,11 +80,11 @@ let flagger = false;
                 </div>
                 <div className="buttonContainer">
                     <div>
-                        {counterFlag} ? <ItemCount stock={resultado.stock} id={resultado.id} addcart={flag} /> : <ItemAddCart  />
+                        {validador}
                     </div>
                     <div className="buttonContainer2">
                         <Link to={"/CODERHOUSE-RJS-CSPC"}>
-                            <Button variant="contained" color="primary" className="detailButton">
+                            <Button variant="contained" color="primary" className="detailButton" onClick={unFlag}> 
                                 Catalogo
                             </Button>
                         </Link>
@@ -96,7 +98,7 @@ let flagger = false;
                     <img src={random1.imgs} alt={random1.nombre} className="itemImgs"></img>
                     <div className="overlay2">
                         <Link to={`/detalle/${random1.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
 
                             </Button>
                         </Link>
@@ -107,7 +109,7 @@ let flagger = false;
                     <div className="overlay2">
 
                         <Link to={`/detalle/${random2.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
 
                             </Button>
                         </Link>
@@ -118,7 +120,7 @@ let flagger = false;
                     <div className="overlay2">
 
                         <Link to={`/detalle/${random3.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
 
                             </Button>
                         </Link>
@@ -129,7 +131,7 @@ let flagger = false;
                     <div className="overlay2">
 
                         <Link to={`/detalle/${random4.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton">
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
 
                             </Button>
                         </Link>
