@@ -8,6 +8,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { CartProvider } from './components/contexts/components/CartContext';
+import { Cart } from './components/cart/components/Cart'
 
 const theme = createMuiTheme({
   palette: {
@@ -31,16 +33,18 @@ function App() {
             </div>
           </Route>
           <Route exact path="/Contactenos">
-          <h2>Proximamente</h2>
+            <h2>Proximamente</h2>
           </Route>
-          <Route exact path='/detalle/:identi'>
-            <div>
-              <ItemDetailContainer/>
-            </div>
-          </Route>
-          <Route exact path='/cart'>
-          <h2>Proximamente</h2>
-          </Route>
+          <CartProvider>
+            <Route exact path='/detalle/:identi'>
+              <div>
+                <ItemDetailContainer />
+              </div>
+            </Route>
+            <Route exact path='/cart'>
+              <h2><Cart /></h2>
+            </Route>
+          </CartProvider>
         </Switch>
       </ThemeProvider>
     </Router>

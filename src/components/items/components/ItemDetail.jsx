@@ -1,11 +1,12 @@
 import { Typography, Button } from '@material-ui/core';
-import React, { useState} from 'react'
+import React, { useState, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link } from 'react-router-dom';
 import { ItemCount } from './ItemCount'
 import { ItemAddCart } from './ItemAddCart'
+import { CartContext } from '../../contexts/components/CartContext';
 
 function randomI(min, max) {//funcion para crear un idice random
     var numPosibilidades = max - min;
@@ -20,17 +21,18 @@ function randomI(min, max) {//funcion para crear un idice random
 
 export const ItemDetail = props => {
 
-    const [cFlag, setCFlag] = useState(true)
-
-    function flag() {
-        setCFlag(false);
-        console.log(cFlag)
-    }
-
+    const {cFlag, setCFlag} = useContext(CartContext)
     
     function unFlag() {
-        setCFlag(true);
+        
         console.log(cFlag)
+    }
+    function Flag(){
+        
+        setCFlag(false);
+        console.log(cFlag)
+        
+
     }
 
 
@@ -61,7 +63,7 @@ export const ItemDetail = props => {
     const random4 = details.find(elementoR => elementoR.id === randomI4);
     console.log(random4)
 
-    const validador = cFlag ? <ItemCount stock={resultado.stock} id={resultado.id} addCart={flag} /> : <ItemAddCart/>
+    const validador = cFlag ? <ItemCount stock={resultado.stock} id={resultado.id} addCart={Flag} /> : <ItemAddCart/>
 
 
 
