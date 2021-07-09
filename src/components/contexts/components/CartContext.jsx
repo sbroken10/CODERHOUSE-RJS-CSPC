@@ -5,23 +5,16 @@ export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
 
+
+    const [cartList, setCartList] = useState([]);
+
+//    function vali (){
+//     let vali = cartList.find(data => resultado.id === resultado.id)
+//     if(vali)
+//    }
     
-    const [id, setId] = useState();
-    const [img, setImg] = useState();
-    const [cFlag, setCFlag] = useState(true)
-    const [cartList, setCartList] = useState([])
-    let contadorV = 0;
 
-    function addCart(){  
-        setCartList(...cartList, {id, contadorV, img})
-    }
-
-    function Flag(){ 
-        setCFlag(false);
-        console.log(cFlag)
-    }
-
-    return <CartContext.Provider value={{contadorV, id, setId, img, setImg, cFlag, setCFlag, addCart}}>
+    return <CartContext.Provider value={{cartList, setCartList}}>
             {children}
         </CartContext.Provider>
     

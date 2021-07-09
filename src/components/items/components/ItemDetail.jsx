@@ -1,5 +1,5 @@
 import { Typography, Button } from '@material-ui/core';
-import React, { useState, useContext} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom';
 import { ItemCount } from './ItemCount'
 import { ItemAddCart } from './ItemAddCart'
 import { CartContext } from '../../contexts/components/CartContext';
+import { CounterContext } from '../../contexts/components/CounterContext';
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
+
+
+
 
 function randomI(min, max) {//funcion para crear un idice random
     var numPosibilidades = max - min;
@@ -21,49 +27,79 @@ function randomI(min, max) {//funcion para crear un idice random
 
 export const ItemDetail = props => {
 
-    const {cFlag, setCFlag} = useContext(CartContext)
-    
-    function unFlag() {
-        
-        console.log(cFlag)
-    }
-    function Flag(){
-        
-        setCFlag(false);
-        console.log(cFlag)
-        
+
+    const { cartList, setCartList } = useContext(CartContext)
+    const [contador] = useContext(CounterContext)
+    const [cFlag, setCFlag] = useState(true)
+    const [open, setOpen] = useState(false)
+    console.log(cFlag)
+
+    const unFlag = () => {
+        setCFlag(true);
 
     }
-
 
     const { details } = props;
     console.log(details)
 
     var randomI1 = randomI(1, details.length)
-    console.log(randomI1)
+
     var randomI2 = randomI(1, details.length)
-    console.log(randomI1)
+
     var randomI3 = randomI(1, details.length)
-    console.log(randomI1)
+
     var randomI4 = randomI(1, details.length)
-    console.log(randomI1)
+
 
     const { identi } = useParams();
-    console.log(identi)
+
 
     const resultado = details.find(elemento => elemento.id === identi);
-    console.log(resultado)
+
+    useEffect(() => {
+        if (cartList.some(data => data['id'] === resultado.id)) {
+            setCFlag(false)
+            setOpen(true)
+        }
+    }, [identi])
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+
+
+    const Flag = () => {
+        setCFlag(false);
+        console.log(cartList)
+        if (cartList.some(data => data['id'] === resultado.id)) {
+
+            // console.log('No se puede')
+            // let objMod = cartList.find(data =>data['id'] === resultado.id)
+            // console.log(objMod)
+            // let indexOf = cartList.indexOf(objMod )
+            // console.log(indexOf)
+            // console.log(cartList[indexOf])
+            // const modCantidad = cartList
+            // console.log(modCantidad[indexOf])
+            // modCantidad[indexOf].cantidad = modCantidad[indexOf].cantidad + contador
+            // setCartList(modCantidad)
+
+        } else {
+            setCartList([...cartList, { id: resultado.id, cantidad: contador }])
+        }
+    }
 
     const random1 = details.find(elementoR => elementoR.id === randomI1);
-    console.log(random1)
-    const random2 = details.find(elementoR => elementoR.id === randomI2);
-    console.log(random2)
-    const random3 = details.find(elementoR => elementoR.id === randomI3);
-    console.log(random3)
-    const random4 = details.find(elementoR => elementoR.id === randomI4);
-    console.log(random4)
 
-    const validador = cFlag ? <ItemCount stock={resultado.stock} id={resultado.id} addCart={Flag} /> : <ItemAddCart/>
+    const random2 = details.find(elementoR => elementoR.id === randomI2);
+
+    const random3 = details.find(elementoR => elementoR.id === randomI3);
+
+    const random4 = details.find(elementoR => elementoR.id === randomI4);
+
+
+    const validador = cFlag ? <ItemCount product={resultado} addCart={Flag} /> : <ItemAddCart />
 
 
 
@@ -83,10 +119,15 @@ export const ItemDetail = props => {
                 <div className="buttonContainer">
                     <div>
                         {validador}
+                        <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="warning">
+                                El item ya se encuentra en el carrito
+                            </Alert>
+                        </Snackbar>
                     </div>
                     <div className="buttonContainer2">
                         <Link to={"/CODERHOUSE-RJS-CSPC"}>
-                            <Button variant="contained" color="primary" className="detailButton" onClick={unFlag}> 
+                            <Button variant="contained" color="primary" className="detailButton" onClick={unFlag}>
                                 Catalogo
                             </Button>
                         </Link>
@@ -144,3 +185,6 @@ export const ItemDetail = props => {
         </div>
     )
 }
+
+
+

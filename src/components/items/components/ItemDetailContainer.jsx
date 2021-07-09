@@ -12,6 +12,7 @@ import nine from '../../../assets/9.jpg'
 import ten from '../../../assets/10.jpg'
 
 
+
 const inventario = [
     {
         id: '1',

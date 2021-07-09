@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 
 export const ItemAddCart = props => {
 
-    const {addCart} = props;
+    
     return (
         <div className="buttonContainer">
           <Link to={'/cart'}>
-          <Button onClick={addCart}  startIcon={<ShopIcon/>} className="detailButton" variant="contained" color="primary">Finalizar compra</Button>
+          <Button   startIcon={<ShopIcon/>} className="detailButton" variant="contained" color="primary">Finalizar compra</Button>
           </Link>
         </div>
     )

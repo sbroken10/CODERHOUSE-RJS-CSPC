@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { CartProvider } from './components/contexts/components/CartContext';
 import { Cart } from './components/cart/components/Cart'
+import { CounterProvider } from './components/contexts/components/CounterContext';
 
 const theme = createMuiTheme({
   palette: {
@@ -23,31 +24,31 @@ const theme = createMuiTheme({
 })
 function App() {
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <NavBar />
-        <Switch>
-          <Route exact path="/CODERHOUSE-RJS-CSPC">
-            <div className="mainContainer">
-              <ItemListContainer />
-            </div>
-          </Route>
-          <Route exact path="/Contactenos">
-            <h2>Proximamente</h2>
-          </Route>
-          <CartProvider>
-            <Route exact path='/detalle/:identi'>
-              <div>
+    <CartProvider>
+      <CounterProvider>
+        <Router>
+          <ThemeProvider theme={theme}>
+            <NavBar />
+            <Switch>
+              <Route exact path="/CODERHOUSE-RJS-CSPC">
+                <div className="mainContainer">
+                  <ItemListContainer />
+                </div>
+              </Route>
+              <Route exact path="/Contactenos">
+                <h2>Proximamente</h2>
+              </Route>
+              <Route exact path='/detalle/:identi'>
                 <ItemDetailContainer />
-              </div>
-            </Route>
-            <Route exact path='/cart'>
-              <h2><Cart /></h2>
-            </Route>
-          </CartProvider>
-        </Switch>
-      </ThemeProvider>
-    </Router>
+              </Route>
+              <Route exact path='/cart'>
+                <Cart />
+              </Route>
+            </Switch>
+          </ThemeProvider>
+        </Router>
+      </CounterProvider>
+    </CartProvider>
   );
 }
 

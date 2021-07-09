@@ -3,8 +3,8 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import ShopIcon from '@material-ui/icons/Shop';
 import '../../styles/ItemCountCard.css';
-import React, { useEffect, useContext, useState } from 'react';
-import { CartContext } from '../../contexts/components/CartContext';
+import React, { useEffect, useContext} from 'react';
+import { CounterContext } from '../../contexts/components/CounterContext';
 
 
 
@@ -52,22 +52,21 @@ const styles = makeStyles(theme => ({
 export const ItemCount = props => {
 
   const classes = styles();
-  const [contador, setContador] = useState(0);
-  let {contadorV} = useContext(CartContext);
-  const { stock, id, addCart } = props;
+  let contadorV = 0;
+  const [contador, setContador]= useContext(CounterContext);
+  const { addCart, product } = props;
   
   
 
   useEffect(() => {
     setContador(0);
-  }, [id])
+  }, [product.id])
 
-
-
+  
   const contadorSuma = () => {
     contadorV = contador + 1;
-    const disponible = contadorV > stock;
-    setContador(disponible ? stock : contadorV)
+    const disponible = contadorV > product.stock;
+    setContador(disponible ? product.stock : contadorV)
     console.log(contadorV)
   }
   const contadorResta = () => {
@@ -76,8 +75,6 @@ export const ItemCount = props => {
     setContador(validador ? 0 : contadorV)
     console.log(contadorV)
   }
-
-
 
   return (
     <div className={classes.container}>
