@@ -17,7 +17,7 @@ const inventario = [
     {
         id: '1',
         nombre: "Bonsai Diosme",
-        precio: "35 USD",
+        precio: 35,
         tamaño: "65cm x 15cm",
         descripcion: "Bonsai Diosme, edad de 7 años plantado en un tronco de pino tallado a mano",
         stock: 4,
@@ -27,7 +27,7 @@ const inventario = [
     {
         id: '2',
         nombre: "Jade Golum",
-        precio: "4 USD",
+        precio: 4,
         tamaño: "10cm x 5cm",
         descripcion: "asd",
         stock: 2,
@@ -37,7 +37,7 @@ const inventario = [
     {
         id: '3',
         nombre: "Bonsai Pino Espinoso",
-        precio: "45 USD",
+        precio: 45,
         tamaño: "45cm x 50cm",
         descripcion: "asd",
         stock: 6,
@@ -47,7 +47,7 @@ const inventario = [
     {
         id: '4',
         nombre: "Bonsai Pino Estrella",
-        precio: "15 USD",
+        precio: 15,
         tamaño: "30cm x 20cm",
         descripcion: "asd",
         stock: 9,
@@ -57,7 +57,7 @@ const inventario = [
     {
         id: '5',
         nombre: "Bonsai Pino Estrellaasd",
-        precio: "15 USD",
+        precio: 15,
         tamaño: "30cm x 20cm",
         descripcion: "asd",
         stock: 2,
@@ -67,7 +67,7 @@ const inventario = [
     {
         id: '6',
         nombre: "Pino tallado con suculentasdasd",
-        precio: "35 USD",
+        precio: 35,
         tamaño: "65cm x 15cm",
         descripcion: "asd",
         stock: 3,
@@ -77,7 +77,7 @@ const inventario = [
     {
         id: '7',
         nombre: "Jade Golumassd",
-        precio: "4 USD",
+        precio: 4,
         tamaño: "10cm x 5cm",
         descripcion: "asd",
         stock: 9,
@@ -87,7 +87,7 @@ const inventario = [
     {
         id: '8',
         nombre: "Bonsai Pino Espinosoasda",
-        precio: "45 USD",
+        precio: 45,
         tamaño: "45cm x 50cm",
         descripcion: "asd",
         stock: 5,
@@ -97,7 +97,7 @@ const inventario = [
     {
         id: '9',
         nombre: "Bonsai Pino Estrellaasdad",
-        precio: "15 USD",
+        precio: 15,
         tamaño: "30cm x 20cm",
         descripcion: "asd",
         stock: 8,
@@ -107,7 +107,7 @@ const inventario = [
     {
         id: '10',
         nombre: "Bonsai Pino Estrellaasda",
-        precio: "15 USD",
+        precio: 15,
         tamaño: "30cm x 20cm",
         descripcion: "asd",
         stock: 2,

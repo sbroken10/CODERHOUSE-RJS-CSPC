@@ -14,21 +14,13 @@ import Alert from '@material-ui/lab/Alert';
 
 
 
-function randomI(min, max) {//funcion para crear un idice random
-    var numPosibilidades = max - min;
-    var aleatorio = Math.random() * (numPosibilidades + 1);
-    aleatorio = Math.floor(aleatorio);
-    var ranI = min + aleatorio;
-    var stringRanI = ranI.toString();
-    return stringRanI
-}
 
 
 
 export const ItemDetail = props => {
 
 
-    const { cartList, setCartList } = useContext(CartContext)
+    const { cartList, setCartList, randomI } = useContext(CartContext)
     const [contador] = useContext(CounterContext)
     const [cFlag, setCFlag] = useState(true)
     const [open, setOpen] = useState(false)
@@ -72,22 +64,26 @@ export const ItemDetail = props => {
     const Flag = () => {
         setCFlag(false);
         console.log(cartList)
-        if (cartList.some(data => data['id'] === resultado.id)) {
+        
+        console.log(cartList.length)
+        
+        // if (cartList.some(data => data['id'] === resultado.id)) {
 
-            // console.log('No se puede')
-            // let objMod = cartList.find(data =>data['id'] === resultado.id)
-            // console.log(objMod)
-            // let indexOf = cartList.indexOf(objMod )
-            // console.log(indexOf)
-            // console.log(cartList[indexOf])
-            // const modCantidad = cartList
-            // console.log(modCantidad[indexOf])
-            // modCantidad[indexOf].cantidad = modCantidad[indexOf].cantidad + contador
-            // setCartList(modCantidad)
+        //     // console.log('No se puede')
+        //     // let objMod = cartList.find(data =>data['id'] === resultado.id)
+        //     // console.log(objMod)
+        //     // let indexOf = cartList.indexOf(objMod )
+        //     // console.log(indexOf)
+        //     // console.log(cartList[indexOf])
+        //     // const modCantidad = cartList
+        //     // console.log(modCantidad[indexOf])
+        //     // modCantidad[indexOf].cantidad = modCantidad[indexOf].cantidad + contador
+        //     // setCartList(modCantidad)
 
-        } else {
-            setCartList([...cartList, { id: resultado.id, cantidad: contador }])
-        }
+        // } else {
+            setCartList([...cartList, { id: resultado.id, cantidad: contador, stock: resultado.stock, img: resultado.imgs, nombre: resultado.nombre, precio: resultado.precio}])
+            
+        // }
     }
 
     const random1 = details.find(elementoR => elementoR.id === randomI1);
@@ -114,7 +110,7 @@ export const ItemDetail = props => {
                     <Typography variant="h3" className="TxtDetailElementN">{resultado.nombre}</Typography>
                     <Typography variant="h5" className="TxtDetailElementT">{resultado.tamaño}</Typography>
                     <Typography variant="h6" className="TxtDetailElementD">{resultado.descripcion}</Typography>
-                    <Typography variant="h5" className="TxtDetailElementP">{resultado.precio}</Typography>
+                    <Typography variant="h5" className="TxtDetailElementP">{`${resultado.precio} USD`}</Typography>
                 </div>
                 <div className="buttonContainer">
                     <div>

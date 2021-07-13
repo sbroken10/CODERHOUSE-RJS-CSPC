@@ -6,8 +6,8 @@ export const CounterContext = createContext();
 export const CounterProvider = ({children}) => {
 
 
-    const [contador, setContador] = useState(0);
-
+    const [contador, setContador] = useState(1);
+    
     
     
     

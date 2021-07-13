@@ -52,14 +52,14 @@ const styles = makeStyles(theme => ({
 export const ItemCount = props => {
 
   const classes = styles();
-  let contadorV = 0;
+  let contadorV = 1;
   const [contador, setContador]= useContext(CounterContext);
   const { addCart, product } = props;
   
   
 
   useEffect(() => {
-    setContador(0);
+    setContador(1);
   }, [product.id])
 
   
@@ -71,8 +71,8 @@ export const ItemCount = props => {
   }
   const contadorResta = () => {
     contadorV = contador - 1;
-    const validador = contador <= 0
-    setContador(validador ? 0 : contadorV)
+    const validador = contador <= 1
+    setContador(validador ? 1 : contadorV)
     console.log(contadorV)
   }
 
