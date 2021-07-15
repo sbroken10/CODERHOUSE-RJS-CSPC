@@ -1,6 +1,5 @@
 import { Typography, Button } from '@material-ui/core';
-import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext} from 'react'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link } from 'react-router-dom';
@@ -20,40 +19,17 @@ import Alert from '@material-ui/lab/Alert';
 export const ItemDetail = props => {
 
 
-    const { cartList, setCartList, randomI } = useContext(CartContext)
+    const { cartList, setCartList} = useContext(CartContext)
     const [contador] = useContext(CounterContext)
-    const [cFlag, setCFlag] = useState(true)
-    const [open, setOpen] = useState(false)
-    console.log(cFlag)
+    
 
     const unFlag = () => {
         setCFlag(true);
+        
 
     }
 
-    const { details } = props;
-    console.log(details)
-
-    var randomI1 = randomI(1, details.length)
-
-    var randomI2 = randomI(1, details.length)
-
-    var randomI3 = randomI(1, details.length)
-
-    var randomI4 = randomI(1, details.length)
-
-
-    const { identi } = useParams();
-
-
-    const resultado = details.find(elemento => elemento.id === identi);
-
-    useEffect(() => {
-        if (cartList.some(data => data['id'] === resultado.id)) {
-            setCFlag(false)
-            setOpen(true)
-        }
-    }, [identi])
+    const { details, r1, r2, r3, r4, cFlag, setCFlag, open, setOpen} = props;
 
     const handleClose = () => {
         setOpen(false)
@@ -63,10 +39,11 @@ export const ItemDetail = props => {
 
     const Flag = () => {
         setCFlag(false);
+
         console.log(cartList)
-        
+
         console.log(cartList.length)
-        
+
         // if (cartList.some(data => data['id'] === resultado.id)) {
 
         //     // console.log('No se puede')
@@ -81,21 +58,15 @@ export const ItemDetail = props => {
         //     // setCartList(modCantidad)
 
         // } else {
-            setCartList([...cartList, { id: resultado.id, cantidad: contador, stock: resultado.stock, img: resultado.imgs, nombre: resultado.nombre, precio: resultado.precio}])
-            
+        setCartList([...cartList, { id: details.id, cantidad: contador, stock: details.stock, img: details.imgs, nombre: details.nombre, precio: details.precio }])
+
         // }
     }
 
-    const random1 = details.find(elementoR => elementoR.id === randomI1);
-
-    const random2 = details.find(elementoR => elementoR.id === randomI2);
-
-    const random3 = details.find(elementoR => elementoR.id === randomI3);
-
-    const random4 = details.find(elementoR => elementoR.id === randomI4);
 
 
-    const validador = cFlag ? <ItemCount product={resultado} addCart={Flag} /> : <ItemAddCart />
+
+    const validador = cFlag ? <ItemCount product={details} addCart={Flag} /> : <ItemAddCart />
 
 
 
@@ -103,14 +74,14 @@ export const ItemDetail = props => {
     return (
         <div className="detailContainer">
             <div className="imgContainer">
-                <img src={resultado.imgs} alt="none" className="itemImgs" />
+                <img src={details.imgs} alt="none" className="itemImgs" />
             </div>
             <div className="txtContainer">
                 <div>
-                    <Typography variant="h3" className="TxtDetailElementN">{resultado.nombre}</Typography>
-                    <Typography variant="h5" className="TxtDetailElementT">{resultado.tamaño}</Typography>
-                    <Typography variant="h6" className="TxtDetailElementD">{resultado.descripcion}</Typography>
-                    <Typography variant="h5" className="TxtDetailElementP">{`${resultado.precio} USD`}</Typography>
+                    <Typography variant="h3" className="TxtDetailElementN">{details.nombre}</Typography>
+                    <Typography variant="h5" className="TxtDetailElementT">{details.tamaño}</Typography>
+                    <Typography variant="h6" className="TxtDetailElementD">{details.descripcion}</Typography>
+                    <Typography variant="h5" className="TxtDetailElementP">{`${details.precio} USD`}</Typography>
                 </div>
                 <div className="buttonContainer">
                     <div>
@@ -133,46 +104,39 @@ export const ItemDetail = props => {
             </div>
 
             <div className="txtContainer2">
-                <div className="imgContainerS">
-                    <img src={random1.imgs} alt={random1.nombre} className="itemImgs"></img>
-                    <div className="overlay2">
-                        <Link to={`/detalle/${random1.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
 
-                            </Button>
+                <div className="imgContainerS">
+                    <img src={r1.imgs} alt={r1.nombre} className="itemImgs"></img>
+                    <div className="overlay2">
+                        <Link to={`/detalle/${r1.id}`}>
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag} />
                         </Link>
                     </div>
                 </div>
+
                 <div className="imgContainerS">
-                    <img src={random2.imgs} alt={random2.nombre} className="itemImgs"></img>
+                    <img src={r2.imgs} alt={r2.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-
-                        <Link to={`/detalle/${random2.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
-
-                            </Button>
+                        <Link to={`/detalle/${r2.id}`}>
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag} />
                         </Link>
                     </div>
                 </div>
+
                 <div className="imgContainerS">
-                    <img src={random3.imgs} alt={random3.nombre} className="itemImgs"></img>
+                    <img src={r3.imgs} alt={r3.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-
-                        <Link to={`/detalle/${random3.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
-
-                            </Button>
+                        <Link to={`/detalle/${r3.id}`}>
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag} />
                         </Link>
                     </div>
                 </div>
+
                 <div className="imgContainerS">
-                    <img src={random4.imgs} alt={random4.nombre} className="itemImgs"></img>
+                    <img src={r4.imgs} alt={r4.nombre} className="itemImgs"></img>
                     <div className="overlay2">
-
-                        <Link to={`/detalle/${random4.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}>
-
-                            </Button>
+                        <Link to={`/detalle/${r4.id}`}>
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}/>
                         </Link>
                     </div>
                 </div>

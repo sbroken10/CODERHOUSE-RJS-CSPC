@@ -1,151 +1,173 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ItemDetail } from './ItemDetail'
-import one from '../../../assets/1.JPG'
-import two from '../../../assets/2.JPG'
-import three from '../../../assets/3.jpg'
-import four from '../../../assets/4.jpg'
-import five from '../../../assets/5.jpg'
-import six from '../../../assets/6.jpg'
-import seven from '../../../assets/7.jpg'
-import eight from '../../../assets/8.jpg'
-import nine from '../../../assets/9.jpg'
-import ten from '../../../assets/10.jpg'
+import { dataBase } from '../../../firebase/firebas';
+import { useParams } from 'react-router-dom'
+import { CartContext } from '../../contexts/components/CartContext';
 
-
-
-const inventario = [
-    {
-        id: '1',
-        nombre: "Bonsai Diosme",
-        precio: 35,
-        tamaño: "65cm x 15cm",
-        descripcion: "Bonsai Diosme, edad de 7 años plantado en un tronco de pino tallado a mano",
-        stock: 4,
-        imgs: one
-
-    },
-    {
-        id: '2',
-        nombre: "Jade Golum",
-        precio: 4,
-        tamaño: "10cm x 5cm",
-        descripcion: "asd",
-        stock: 2,
-        imgs: two,
-
-    },
-    {
-        id: '3',
-        nombre: "Bonsai Pino Espinoso",
-        precio: 45,
-        tamaño: "45cm x 50cm",
-        descripcion: "asd",
-        stock: 6,
-        imgs: three,
-
-    },
-    {
-        id: '4',
-        nombre: "Bonsai Pino Estrella",
-        precio: 15,
-        tamaño: "30cm x 20cm",
-        descripcion: "asd",
-        stock: 9,
-        imgs: four,
-
-    },
-    {
-        id: '5',
-        nombre: "Bonsai Pino Estrellaasd",
-        precio: 15,
-        tamaño: "30cm x 20cm",
-        descripcion: "asd",
-        stock: 2,
-        imgs: five,
-
-    },
-    {
-        id: '6',
-        nombre: "Pino tallado con suculentasdasd",
-        precio: 35,
-        tamaño: "65cm x 15cm",
-        descripcion: "asd",
-        stock: 3,
-        imgs: six,
-
-    },
-    {
-        id: '7',
-        nombre: "Jade Golumassd",
-        precio: 4,
-        tamaño: "10cm x 5cm",
-        descripcion: "asd",
-        stock: 9,
-        imgs: seven,
-
-    },
-    {
-        id: '8',
-        nombre: "Bonsai Pino Espinosoasda",
-        precio: 45,
-        tamaño: "45cm x 50cm",
-        descripcion: "asd",
-        stock: 5,
-        imgs: eight,
-
-    },
-    {
-        id: '9',
-        nombre: "Bonsai Pino Estrellaasdad",
-        precio: 15,
-        tamaño: "30cm x 20cm",
-        descripcion: "asd",
-        stock: 8,
-        imgs: nine,
-
-    },
-    {
-        id: '10',
-        nombre: "Bonsai Pino Estrellaasda",
-        precio: 15,
-        tamaño: "30cm x 20cm",
-        descripcion: "asd",
-        stock: 2,
-        imgs: ten,
-
-    },
-]
-
-
-
-const itemDetailCreation = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(inventario), 2000);
-    })
-}
 
 export const ItemDetailContainer = () => {
 
-    const [itemD, setItemD] = useState([])
+    
+    const [items, setItems] = useState({})
 
-    const passDetails = () => {
-        itemDetailCreation().then(
-            listData => { setItemD(listData) })
-    }
+    
+    const [itemR1, setItemR1] = useState({})
+    const [itemR2, setItemR2] = useState({})
+    const [itemR3, setItemR3] = useState({})
+    const [itemR4, setItemR4] = useState({})
+    const [loading, setLoading] = useState(false)
+    const { cartList, randomI, arrId, intemCant} = useContext(CartContext)
+    const [R1, setR1] = useState(0)
+    const [R2, setR2] = useState(0)
+    const [R3, setR3] = useState(0)
+    const [R4, setR4] = useState(0)
+    // let R4 = 0
+    
+    
+    const { identi } = useParams();
+    const [cFlag, setCFlag] = useState(true)
+    const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        passDetails();
-    }, [])
+        setR1(randomI(1, (intemCant-1)))
+        console.log(R1)
+    }, [identi])
+
+    useEffect(() => {
+        setR2(randomI(1, (intemCant-1)))
+        console.log(R2)
+    }, [identi])
+
+    useEffect(() => {
+        setR3(randomI(1, (intemCant-1)))
+        console.log(R3)
+    }, [identi])
+
+    useEffect(() => {
+        setR4(randomI(1, (intemCant-1)))
+        console.log(R4)
+    }, [identi])
+
+    useEffect(() => {
+        setLoading(true);
+        const itemCollection = dataBase.collection("catalogo")
+        const item = itemCollection.doc(identi)
+        console.log(item)
+        console.log(identi)
+        item.get().then((doc) => {
+            console.log(doc)
+            console.log(doc.exists)
+            if(doc.exist === false){
+                console.log('Item doesnt exist');
+                return;
+            }
+            if (cartList.some(data => data['id'] === doc.id)) {
+                setCFlag(false)
+                setOpen(true)
+            }
+            console.log('Item found')
+            setItems({id: doc.id, ...doc.data()})
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        }).finally(() => {
+            setLoading(false)
+        });
+    }, [identi])
 
 
-    console.log(itemD)
+    ///////////////////////
+    
+    useEffect(() => {
+        setLoading(true);
+        const itemCollection = dataBase.collection("catalogo")
+        console.log(arrId)
+        console.log(R1)
+        const item1 = itemCollection.doc(arrId[R1])
+        console.log(itemCollection.doc(arrId[R1]))
+        console.log(item1)
+        item1.get().then((doc) => {
+            if(doc.exist == false){
+                console.log('Item doesnt exist');
+                return;
+            }
+            console.log('Item found')
+            setItemR1({id: doc.id, ...doc.data()})
+            console.log(itemR1)
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        }).finally(() => {
+            setLoading(false)
+        });
+    }, [identi])
 
+    useEffect(() => {
+        setLoading(true);
+        const itemCollection = dataBase.collection("catalogo")
+        console.log(R2)
+        const item2 = itemCollection.doc(arrId[R2])
+        console.log(item2)
+        item2.get().then((doc) => {
+            if(doc.exist == false){
+                console.log('Item doesnt exist');
+                return;
+            }
+            console.log('Item found')
+            setItemR2({id: doc.id, ...doc.data()})
+            console.log(itemR2)
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        }).finally(() => {
+            setLoading(false)
+        });
+    }, [identi])
+
+    useEffect(() => {
+        setLoading(true);
+        const itemCollection = dataBase.collection("catalogo")
+        console.log(R3)
+        const item3 = itemCollection.doc(arrId[R3])
+        console.log(item3)
+        item3.get().then((doc) => {
+            if(doc.exist == false){
+                console.log('Item doesnt exist');
+                return;
+            }
+            console.log('Item found')
+            setItemR3({id: doc.id, ...doc.data()})
+            console.log(itemR3)
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        }).finally(() => {
+            setLoading(false)
+        });
+    }, [identi])
+
+    useEffect(() => {
+        setLoading(true);
+        const itemCollection = dataBase.collection("catalogo")
+        console.log(R4)
+        const item4 = itemCollection.doc(arrId[R4])
+        console.log(item4)
+        item4.get().then((doc) => {
+            if(doc.exist == false){
+                console.log('Item doesnt exist');
+                return;
+            }
+            console.log('Item found')
+            setItemR4({id: doc.id, ...doc.data()})
+            console.log(itemR4)
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        }).finally(() => {
+            setLoading(false)
+        });
+    }, [identi])
     
 
 
     return (
                     
-        itemD.length === 0? <h1>Cargando</h1> : <ItemDetail details={itemD}/>
+        <ItemDetail details={items} r1={itemR1} r2={itemR2} r3={itemR3} r4={itemR4} cFlag={cFlag} setCFlag={setCFlag} open={open} setOpen={setOpen}/>
     )
 }
 

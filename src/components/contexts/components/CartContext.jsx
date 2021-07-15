@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+
 export const CartContext = createContext();
 
 
@@ -22,14 +23,23 @@ export const CartProvider = ({ children }) => {
    
     const [shoTot, setShoTot] = useState(0)
 
+    const [intemCant, setItemCant] = useState(0)
+
     const [priceFlag, setPriceFlag] = useState(true)
 
+    const [arrId, setArrId] = useState([])
+
+    
     useEffect(() => {
         setCartCount(cartList.length)
     }, [cartList.length])
+   
 
+    
+
+    
   
-    return <CartContext.Provider value={{ cartList, setCartList, setCartCount,cartCount, randomI, shoTot, setShoTot, priceFlag, setPriceFlag}}>
+    return <CartContext.Provider value={{ cartList, setCartList, setCartCount,cartCount, randomI, shoTot, setShoTot, priceFlag, setPriceFlag, intemCant, setItemCant, arrId, setArrId}}>
         {children}
     </CartContext.Provider>
 

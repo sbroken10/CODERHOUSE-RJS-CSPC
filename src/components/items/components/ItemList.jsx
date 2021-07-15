@@ -9,6 +9,7 @@ export const ItemList = props => {
 
 
     const { pr } = props
+    console.log(pr[2])
 
     const itemsGrid = <div className="mainContainer">{pr.map((producto) =>
         <Item producto={producto}></Item>
