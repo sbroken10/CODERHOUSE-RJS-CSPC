@@ -126,7 +126,7 @@ export const ItemListContainer = () => {
         setLoading(true);
         const itemCollection = dataBase.collection("catalogo")
         itemCollection.get().then((querySnapshot) => {
-            if(querySnapshot.size === 0){
+            if (querySnapshot.size === 0) {
                 console.log('No results')
             }
             setItems(querySnapshot.docs.map(doc => doc))
@@ -142,7 +142,7 @@ export const ItemListContainer = () => {
         });
     }, [])
 
-  
+
 
     // const passArray = () => {
     //     itemCreation().then(

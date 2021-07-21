@@ -7,13 +7,13 @@ import { CartContext } from '../../contexts/components/CartContext';
 
 export const Cart = props => {
 
-    const { product} = props
-    const { cartList, setCartList, setCartCount, shoTot, setShoTot, priceFlag, setPriceFlag} = useContext(CartContext)
+    const { product } = props
+    const { cartList, setCartList, setCartCount, shoTot, setShoTot, priceFlag, setPriceFlag } = useContext(CartContext)
 
     const [cartCounter, setCartCounter] = useState(product.cantidad)
 
     let contadorV = 1;
-    
+
 
     const suma = () => {
         console.log(product.cantidad)
@@ -23,7 +23,7 @@ export const Cart = props => {
         console.log(contadorV)
         const disponible = contadorV > product.stock;
         console.log(disponible)
-        disponible? product.cantidad = product.stock : product.cantidad = contadorV
+        disponible ? product.cantidad = product.stock : product.cantidad = contadorV
         setCartCounter(disponible ? product.stock : contadorV)
         setPriceFlag(!priceFlag)
         console.log(priceFlag)
@@ -38,7 +38,7 @@ export const Cart = props => {
         console.log(contadorV)
         const validador = product.cantidad <= 1
         console.log(validador)
-        validador? product.cantidad = 1 :  product.cantidad = contadorV
+        validador ? product.cantidad = 1 : product.cantidad = contadorV
         setCartCounter(validador ? 1 : contadorV)
         setPriceFlag(!priceFlag)
         console.log(priceFlag)
@@ -58,7 +58,7 @@ export const Cart = props => {
                 console.log(registro.id)
                 console.log(product.id)
                 if (registro.id === product.id) {
-                    let minus = shoTot- (tempList[contador].cantidad * tempList[contador].precio )
+                    let minus = shoTot - (tempList[contador].cantidad * tempList[contador].precio)
                     console.log(minus)
                     setShoTot(minus)
                     tempList.splice(contador, 1);
@@ -68,9 +68,9 @@ export const Cart = props => {
                 console.log(contador)
                 console.log(tempList)
             })
-        setCartList(tempList)
-        console.log(shoTot)
-        console.log(cartList)
+            setCartList(tempList)
+            console.log(shoTot)
+            console.log(cartList)
         }
     }
 
@@ -84,7 +84,7 @@ export const Cart = props => {
                     <Typography variant="h3" className="cartTxtDetailElementN">{product.nombre}</Typography>
                 </div>
                 <div>
-                    <Typography variant="h3" className="cartTxtDetailElementP">{`${product.precio*cartCounter} USD`}</Typography>
+                    <Typography variant="h3" className="cartTxtDetailElementP">{`${product.precio * cartCounter} USD`}</Typography>
                 </div>
                 <div className="cartDetails">
                     <div className="cartControls">

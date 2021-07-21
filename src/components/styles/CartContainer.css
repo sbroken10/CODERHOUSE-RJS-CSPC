@@ -85,10 +85,10 @@
   }
   .TotalContainer{
     position: fixed;
-    bottom: 55%;
+    bottom: 26%;
     right: 1.5%;
     width: 50vh;
-    height: 25%;
+    height: auto;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
     background-color: #752112df;
     border-radius: 5px;
@@ -104,9 +104,25 @@
     
     width: 80%;
     position: relative;
-    left: 8%;}
+    left: 8%;
+    padding-bottom: 2vh;
+  }
+  
+  .cartDetailText{
+    width: 80%;
+    position: relative;
+    left: 8%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    }
+  
+  .cartDetailContainer{
+    padding-bottom: 2vh;
+    border-radius: 5px;
+    }
   .cartButtonContainer{
-    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    padding-bottom: .5vh;
   }
 
   .emptyCartContainer{

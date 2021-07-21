@@ -1,5 +1,5 @@
 import { Typography, Button } from '@material-ui/core';
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import '../../styles/ItemDetails.css'
 import ShopIcon from '@material-ui/icons/Shop';
 import { Link } from 'react-router-dom';
@@ -19,17 +19,17 @@ import Alert from '@material-ui/lab/Alert';
 export const ItemDetail = props => {
 
 
-    const { cartList, setCartList} = useContext(CartContext)
+    const { cartList, setCartList } = useContext(CartContext)
     const [contador] = useContext(CounterContext)
-    
+
 
     const unFlag = () => {
         setCFlag(true);
-        
+
 
     }
 
-    const { details, r1, r2, r3, r4, cFlag, setCFlag, open, setOpen} = props;
+    const { details, r1, r2, r3, r4, cFlag, setCFlag, open, setOpen } = props;
 
     const handleClose = () => {
         setOpen(false)
@@ -136,7 +136,7 @@ export const ItemDetail = props => {
                     <img src={r4.imgs} alt={r4.nombre} className="itemImgs"></img>
                     <div className="overlay2">
                         <Link to={`/detalle/${r4.id}`}>
-                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag}/>
+                            <Button variant="contained" color="primary" startIcon={<ShopIcon />} className="SalgButton" onClick={unFlag} />
                         </Link>
                     </div>
                 </div>

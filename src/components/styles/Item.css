@@ -70,3 +70,43 @@ flex-direction: column;
   height:50%;
   cursor: pointer;
 } */
+
+
+@media screen and (max-width:1000px){
+  .contenedor-imagenes{
+      width: 95%;
+  }
+}
+
+@media screen and (max-width:700px){
+ .itemContainer{
+      width: 48%;
+  }
+  .sTxtElement {
+    font-family: 'Bebas Neue', cursive !important;
+    color: honeydew;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    left: 5%;
+    top: 2%;
+    font-size: 30px !important;
+  }
+}
+
+@media screen and (max-width:450px){
+  
+  .itemContainer{
+      width: 80%;
+  }
+  .sTxtElement {
+    font-family: 'Bebas Neue', cursive !important;
+    color: honeydew;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    left: 5%;
+    top: 2%;
+    font-size: 30px !important;
+  }
+}

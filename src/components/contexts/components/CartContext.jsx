@@ -16,11 +16,10 @@ export const CartProvider = ({ children }) => {
         return stringRanI
     }
 
-
     const [cartList, setCartList] = useState([]);
 
     const [cartCount, setCartCount] = useState(0)
-   
+
     const [shoTot, setShoTot] = useState(0)
 
     const [intemCant, setItemCant] = useState(0)
@@ -29,20 +28,18 @@ export const CartProvider = ({ children }) => {
 
     const [arrId, setArrId] = useState([])
 
-    
+    const [cartFlag, setCartFlag] = useState(true)
+
+    const [orderId, setOrderId] = useState()
+
+
     useEffect(() => {
         setCartCount(cartList.length)
     }, [cartList.length])
-   
 
-    
-
-    
-  
-    return <CartContext.Provider value={{ cartList, setCartList, setCartCount,cartCount, randomI, shoTot, setShoTot, priceFlag, setPriceFlag, intemCant, setItemCant, arrId, setArrId}}>
+    return <CartContext.Provider value={{ cartList, setCartList, setCartCount, cartCount, randomI, shoTot, setShoTot, priceFlag, setPriceFlag, intemCant, setItemCant, arrId, setArrId, cartFlag, setCartFlag, orderId, setOrderId }}>
         {children}
     </CartContext.Provider>
-
 }
 
 
