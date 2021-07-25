@@ -4,17 +4,18 @@
     flex-direction: row;
     justify-content: space-around;
     width: 90%;
-    padding-left: 10vh;
-    padding-top: 10vh;
+    padding-left: 2vh;
+    padding-top: 7vh;
   }
-.imgContainer{    
-    width: 40%;
-    height: 70vh;
+.imgContaineras{    
+    width: 100vh;
+    height: 100vh;
     border: 2px solid grey;
     border-radius: 8px;
     position: relative;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-    margin-right: 5vh;
+    margin-right: 1vh;
+    display: inline;
   }
   .imgContainerS{    
     width: 100%;
@@ -23,7 +24,7 @@
     border-radius: 8px;
     position: relative;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-    margin-right: 5vh;
+    margin-right: 2vh;
   }
   .cardElements{
     margin-left: 10px;
@@ -36,16 +37,17 @@
     border-radius: 8px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
     width: 60vh;
-    height: 70vh;
+    height: 100vh;
     padding-left: 1%;
-    margin-right: 30vh;
+    margin-right: 5vh;
+    display: inline;
   }
   .txtContainer2{
-    
+    display: inline;
     border-radius: 8px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
     width: 50vh;
-    height: 70vh;
+    height: 100vh;
   }
 
 .pTxtElement {
@@ -82,11 +84,11 @@ left: 8%;}
 
 .buttonContainer{
 
-margin-top: 10%;
+margin-top: 2%;
 }
 .buttonContainer2{
 
-    margin-top: 5%;
+    margin-top: 4%;
     }
 .itemImgs {
   margin-top: 0;
@@ -116,4 +118,427 @@ margin-top: 10%;
     position: relative;
     left: 72%;
     bottom: 72%;
+}
+@media screen and (max-width:1280px){
+  .detailContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:98%;
+    padding-left: 2vh;
+    padding-top: 10vh;
+  }
+  .imgContaineras{    
+      width: 60%;
+      height: 70vh;   
+      padding-left: 0vh;
+      margin-bottom: 2vh;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+  .txtContainer{
+      background-color: #752112df;
+      border: 2px solid grey;
+      border-radius: 8px;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      width: 50%;
+      height: 70vh;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+      margin-bottom: 2vh;
+    }
+    .txtContainer2{
+      display: flex;
+      flex-direction: column;
+      border-radius: 0px;
+      box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+      width: 40%;
+      height: 70vh;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+    .imgContainerS{    
+      width: 90%;
+      height: 25%;
+      border: 2px solid grey;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      margin-right: 2vh;
+      margin-left: 2vh;
+    }
+    .TxtDetailElementN {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 1vh !important;
+      font-size: 30px !important;
+    }
+  .TxtDetailElementT {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 0vh !important;
+      font-size: 20px !important;
+    }
+  .TxtDetailElementD {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 0vh !important;
+      font-size: 18px !important;
+    }
+  .TxtDetailElementP {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 0vh !important;
+      font-size: 30px !important;
+    }
+}
+
+@media screen and (max-width:1000px){
+  .detailContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:98%;
+    padding-left: 2vh;
+    padding-top: 10vh;
+  }
+  .imgContaineras{    
+      width: 90%;
+      height: 70vh;   
+      padding-left: 0vh;
+      margin-bottom: 2vh;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+  .txtContainer{
+      background-color: #752112df;
+      border: 2px solid grey;
+      border-radius: 8px;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      width: 90%;
+      height: 70vh;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+      margin-bottom: 2vh;
+    }
+    .txtContainer2{
+      display: flex;
+      flex-direction: column;
+      border-radius: 0px;
+      box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+      width: 60vh;
+      height: 70vh;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+    .imgContainerS{    
+      width: 90%;
+      height: 25%;
+      border: 2px solid grey;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      margin-right: 2vh;
+      margin-left: 2vh;
+    }
+    .TxtDetailElementN {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 3vh;
+      font-size: 30px !important;
+    }
+  .TxtDetailElementT {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 2vh;
+      font-size: 20px !important;
+    }
+  .TxtDetailElementD {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 2vh;
+      font-size: 18px !important;
+    }
+  .TxtDetailElementP {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 2vh;
+      font-size: 18px !important;
+    }
+}
+
+@media screen and (max-width:750px){
+    
+.detailContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width:98%;
+  padding-left: 2vh;
+  padding-top: 10vh;
+}
+.imgContaineras{    
+    width: 90%;
+    height: auto;   
+    padding-left: 0vh;
+    margin-bottom: 2vh;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
+.txtContainer{
+    background-color: #752112df;
+    border: 2px solid grey;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+    width: 90%;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+    margin-bottom: 2vh;
+  }
+  .txtContainer2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 0px;
+    box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+    width:90%;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
+  .imgContainerS{    
+    width: 43%;
+    height: 30vh;
+    border: 2px solid grey;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+    margin-right: 2vh;
+    margin-left: 2vh;
+  }
+  .TxtDetailElementN {
+    font-family: 'Bebas Neue', cursive !important;
+    color: honeydew;
+    margin-bottom: 3vh;
+    font-size: 30px !important;
+  }
+.TxtDetailElementT {
+    font-family: 'Bebas Neue', cursive !important;
+    color: honeydew;
+    margin-bottom: 2vh;
+    font-size: 20px !important;
+  }
+.TxtDetailElementD {
+    font-family: 'Bebas Neue', cursive !important;
+    color: rgba(207, 207, 207, 0.733);
+    margin-bottom: 2vh;
+    font-size: 18px !important;
+  }
+.TxtDetailElementP {
+    font-family: 'Bebas Neue', cursive !important;
+    color: rgba(207, 207, 207, 0.733);
+    margin-bottom: 2vh;
+    font-size: 18px !important;
+  }
+
+}
+@media screen and (max-width:532px){
+    
+  .detailContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:98%;
+    padding-left: 2vh;
+    padding-top: 10vh;
+  }
+  .imgContaineras{    
+      width: 90%;
+      height: auto;   
+      padding-left: 0vh;
+      margin-bottom: 2vh;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+  .txtContainer{
+      background-color: #752112df;
+      border: 2px solid grey;
+      border-radius: 8px;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      width: 90%;
+      height: auto;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+      margin-bottom: 2vh;
+    }
+    .txtContainer2{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-radius: 0px;
+      box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+      width:90%;
+      height: auto;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-right: 0;
+      margin-left: 0vh;
+    }
+    .imgContainerS{    
+      width: 43%;
+      height: 30vh;
+      border: 2px solid grey;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+      margin-right: 2vh;
+      margin-left: 2vh;
+    }
+    .TxtDetailElementN {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 3vh;
+      font-size: 30px !important;
+    }
+  .TxtDetailElementT {
+      font-family: 'Bebas Neue', cursive !important;
+      color: honeydew;
+      margin-bottom: 2vh;
+      font-size: 20px !important;
+    }
+  .TxtDetailElementD {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 2vh;
+      font-size: 18px !important;
+    }
+  .TxtDetailElementP {
+      font-family: 'Bebas Neue', cursive !important;
+      color: rgba(207, 207, 207, 0.733);
+      margin-bottom: 2vh;
+      font-size: 18px !important;
+    }
+  
+  }
+
+@media screen and (max-width:450px){
+  
+  .imgContaineras{    
+    width: 50vh;
+    height: 70vh;   
+    padding-left: 0vh;
+    margin-bottom: 2vh;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
+  
+.detailContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width:98%;
+  padding-left: 5vh;
+  padding-top: 10vh;
+}
+.txtContainer{
+    background-color: #752112df;
+    border: 2px solid grey;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+    width: 50vh;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+    margin-bottom: 2vh;
+  }
+  .txtContainer2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 0px;
+    box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+    width:90%;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
+  .imgContainerS{    
+    width: 80%;
+    height: 30vh;
+    border: 2px solid grey;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+    margin-right: 2vh;
+    margin-left: 2vh;
+  }
+}
+@media screen and (max-width:350px){
+  
+  .imgContaineras{    
+    width: 50vh;
+    height: 70vh;   
+    padding-left: 0vh;
+    margin-bottom: 2vh;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
+  
+.detailContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width:98%;
+  padding-left: 2vh;
+  padding-top: 10vh;
+}
+.txtContainer{
+    background-color: #752112df;
+    border: 2px solid grey;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
+    width: 50vh;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+    margin-bottom: 2vh;
+  }
+  .txtContainer2{
+    
+    border-radius: 0px;
+    box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+    width: 50vh;
+    height: 100vh;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    margin-left: 0vh;
+  }
 }

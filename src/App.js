@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from './components/navVar/components/NavBar';
+import {NavBar} from './components/navVar/components/NavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { ItemListContainer } from './components/items/components/ItemListContainer';
 import { ItemDetailContainer } from './components/items/components/ItemDetailContainer';

@@ -39,12 +39,6 @@ const styles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  add: {
-    justifyContent: 'center',
-    marginLeft: '14%',
-    marginTop: '5%',
-    color: "withe"
-  }
 }))
 
 
@@ -78,7 +72,7 @@ export const ItemCount = props => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.details}>
+      <div className="details">
         <div className={classes.controls}>
           <Button onClick={contadorResta}><RemoveCircleOutlineIcon></RemoveCircleOutlineIcon></Button>
         </div>
@@ -91,7 +85,7 @@ export const ItemCount = props => {
           <Button onClick={contadorSuma}><AddCircleOutlineIcon></AddCircleOutlineIcon></Button>
         </div>
       </div>
-      <div className={classes.add}>
+      <div className="add">
         <Button onClick={addCart} startIcon={<ShopIcon /> } variant="contained" color="primary">Agregar al carrito</Button>
       </div>
     </div>

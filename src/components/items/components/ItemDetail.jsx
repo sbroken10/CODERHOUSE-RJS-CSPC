@@ -73,7 +73,7 @@ export const ItemDetail = props => {
 
     return (
         <div className="detailContainer">
-            <div className="imgContainer">
+            <div className="imgContaineras">
                 <img src={details.imgs} alt="none" className="itemImgs" />
             </div>
             <div className="txtContainer">
