@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
 
     const [shoTot, setShoTot] = useState(0)
 
-    const [intemCant, setItemCant] = useState(0)
+    const [intemCant, setItemCant] = useState()
 
     const [priceFlag, setPriceFlag] = useState(true)
 

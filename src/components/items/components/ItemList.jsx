@@ -1,15 +1,17 @@
 import { Item } from './Item'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/ItemList.css'
+import { CartContext } from '../../contexts/components/CartContext';
 
 
 
 export const ItemList = props => {
 
 
-
+    
     const { pr } = props
-    console.log(pr[2])
+    console.log(pr.length)
+    
 
     const itemsGrid = <div className="mainContainer">{pr.map((producto) =>
         <Item producto={producto}></Item>

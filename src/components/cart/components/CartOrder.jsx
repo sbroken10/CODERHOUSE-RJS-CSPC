@@ -10,7 +10,7 @@ export const CartOrder = () => {
 
     return (
 
-        <Card>
+        <Card className="orderContainer">
             <CardContent>
                 <div>
                     <Typography variant="h3">

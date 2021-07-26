@@ -17,6 +17,8 @@ export const ItemDetailContainer = () => {
     const [itemR4, setItemR4] = useState({})
     const [loading, setLoading] = useState(false)
     const { cartList, randomI, arrId, intemCant } = useContext(CartContext)
+    console.log(randomI(1, (intemCant - 1)))
+    console.log(intemCant)
     const [R1, setR1] = useState(randomI(1, (intemCant - 1)))
     const [R2, setR2] = useState(randomI(1, (intemCant - 1)))
     const [R3, setR3] = useState(randomI(1, (intemCant - 1)))
