@@ -2,8 +2,6 @@
 
 Este proyecto es la culminación exitosa del curso reactJS de CoderHouse
 
-## Available Scripts
-
 En este proyecto entontraras las bases de un e-comerce con todas sus funcionalidades.
 
 ### `Que es FOCA`
