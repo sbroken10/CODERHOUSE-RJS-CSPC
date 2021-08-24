@@ -97,8 +97,8 @@ export const NavBar = () => {
 
         return (
             <Toolbar color="secondary">
-                <Typography variant="text" className={classes.buttons}>
-                    <h1 className="focaTitle">FoCa</h1>
+                <Typography variant="h1" className={classes.buttons}>
+                    <p className="focaTitle">FoCa</p>
                 </Typography>
                 <IconButton
                     {...{
@@ -123,8 +123,8 @@ export const NavBar = () => {
             <AppBar>
                 {mobileView ? displayMobile() :
                     <Toolbar color="secondary">
-                        <Typography variant="text" className={classes.buttons}>
-                            <h1 className="focaTitle">FoCa</h1>
+                        <Typography variant="h1" className={classes.buttons}>
+                            <p className="focaTitle">FoCa</p>
                         </Typography>
                         <Button variant="text" color="inherit">
                             <Link to="/CODERHOUSE-RJS-CSPC" className={classes.links}>

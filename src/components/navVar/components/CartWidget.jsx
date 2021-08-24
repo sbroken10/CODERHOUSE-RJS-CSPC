@@ -24,8 +24,8 @@ const CartWidget = () => {
     
     return (
         <Link to={'/cart'}>
-        <Button variant="button" >
-            <StyledBadge badgeContent={cartCount} color="secondary"  overlap="circular">
+        <Button variant="text" >
+            <StyledBadge badgeContent={cartCount} color="secondary"  overlap="circle">
                 <ShoppingCartIcon color="secondary" fontSize="large" />
             </StyledBadge>
         </Button>

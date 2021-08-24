@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
             case 1:
                 setLoading(true);
                 const itemCollection1 = dataBase.collection("catalogo")
-                const bonsai = itemCollection1.where('tipo','==', 1);
+                const bonsai = itemCollection1.where('stock','>', 0).where('tipo','==', 1);
                 bonsai.get().then((querySnapshot) => {
                     if (querySnapshot.size === 0) {
                         console.log('No results')
@@ -35,7 +35,7 @@ export const ItemListContainer = () => {
             case 2:
                 setLoading(true);
                 const itemCollection2 = dataBase.collection("catalogo")
-                const suculenta = itemCollection2.where('tipo','==', 2);
+                const suculenta = itemCollection2.where('stock','>', 0).where('tipo','==', 2);
                 suculenta.get().then((querySnapshot) => {
                     if (querySnapshot.size === 0) {
                         console.log('No results')
@@ -50,7 +50,7 @@ export const ItemListContainer = () => {
             case 3:
                 setLoading(true);
                 const itemCollection3 = dataBase.collection("catalogo")
-                const arreglo = itemCollection3.where('tipo','==', 3);
+                const arreglo = itemCollection3.where('stock','>', 0).where('tipo','==', 3);
                 arreglo.get().then((querySnapshot) => {
                     if (querySnapshot.size === 0) {
                         console.log('No results')
@@ -65,7 +65,8 @@ export const ItemListContainer = () => {
             default:
                 setLoading(true);
                 const itemCollectionB = dataBase.collection("catalogo")
-                itemCollectionB.get().then((querySnapshot) => {
+                const itemCol = itemCollectionB.where('stock','>', 0);
+                itemCol.get().then((querySnapshot) => {
                     if (querySnapshot.size === 0) {
                         console.log('No results')
                     }
