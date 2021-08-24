@@ -45,7 +45,7 @@ Los datos necesarios son "Nombre", "Numero de telefono" y "Correo electronico". 
 
 5. Una vez los datos sean correctos, podremos terminar la compra y recibiremos la confirmacion del ID de la compra que acabamos de realizar. 
 
-![Alt Text](https://github.com/sbroken10/CODERHOUSE-RJS-CSPC/blob/main/Gifi/6.gif)
+![Alt Text](https://github.com/sbroken10/CODERHOUSE-RJS-CSPC/blob/main/Gifi/5.gif)
 
 
 ### `Contacto y reporte de fallas`
