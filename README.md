@@ -19,6 +19,20 @@ Las librerias implementadas para el correcto funcionamiento son:
 
 Esta version es prueba y no se permite la compra de los productos mostrados en el proyecto.
 
+### `Instalacion`
+
+git clone https://github.com/sbroken10/CODERHOUSE-RJS-CSPC
+npm i
+npm clone
+
+### `Vista Online`
+
+Para ver el sitio publicado, ingresar al siguiente enlace
+
+https://sbroken10.github.io/CODERHOUSE-RJS-CSPC
+
+
+
 ### `Modo de uso`
 
 1. Dentro de la pagina principal encontraremos el portafolio completo de los productos disponibles. Donde podemos filtrarlas categorias por "Bonsais", "Suculentas" y "Arreglos especiales"
