@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CODERHOUSE-RJS-CSPC/static/css/main.d6077c12.chunk.css",
-    "main.js": "/CODERHOUSE-RJS-CSPC/static/js/main.178fa83c.chunk.js",
-    "main.js.map": "/CODERHOUSE-RJS-CSPC/static/js/main.178fa83c.chunk.js.map",
+    "main.js": "/CODERHOUSE-RJS-CSPC/static/js/main.eecc461f.chunk.js",
+    "main.js.map": "/CODERHOUSE-RJS-CSPC/static/js/main.eecc461f.chunk.js.map",
     "runtime-main.js": "/CODERHOUSE-RJS-CSPC/static/js/runtime-main.8cbcb016.js",
     "runtime-main.js.map": "/CODERHOUSE-RJS-CSPC/static/js/runtime-main.8cbcb016.js.map",
     "static/js/2.92f8ef30.chunk.js": "/CODERHOUSE-RJS-CSPC/static/js/2.92f8ef30.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8cbcb016.js",
     "static/js/2.92f8ef30.chunk.js",
     "static/css/main.d6077c12.chunk.css",
-    "static/js/main.178fa83c.chunk.js"
+    "static/js/main.eecc461f.chunk.js"
   ]
 }
