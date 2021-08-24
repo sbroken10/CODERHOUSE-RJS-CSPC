@@ -54,6 +54,7 @@ export const ItemCount = props => {
 
   useEffect(() => {
     setContador(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product.id])
 
   
@@ -61,13 +62,11 @@ export const ItemCount = props => {
     contadorV = contador + 1;
     const disponible = contadorV > product.stock;
     setContador(disponible ? product.stock : contadorV)
-    console.log(contadorV)
   }
   const contadorResta = () => {
     contadorV = contador - 1;
     const validador = contador <= 1
     setContador(validador ? 1 : contadorV)
-    console.log(contadorV)
   }
 
   return (

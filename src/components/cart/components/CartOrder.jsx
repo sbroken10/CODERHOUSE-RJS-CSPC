@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { Typography, Button, CardContent } from '@material-ui/core'
+import { Typography, CardContent } from '@material-ui/core'
 import { Card } from '@material-ui/core';
 import '../../styles/CartContainer.css'
 import { CartContext } from '../../contexts/components/CartContext';
 
 export const CartOrder = () => {
 
-    const { shoTot, cartList, orderId } = useContext(CartContext)
+    const { shoTot,orderId } = useContext(CartContext)
 
     return (
 

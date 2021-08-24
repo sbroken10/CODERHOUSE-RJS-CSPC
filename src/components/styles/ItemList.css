@@ -1,13 +1,20 @@
 .mainContainer{
-   
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 95%;
-  margin: auto;
   margin-left: 1vh;
 }
-
+.mainContainer2{
+   
+  margin-top: 9vh;
+  width: 95%;
+  margin-left: 1vh;
+}
+.icon{
+  width: 2vh;
+  height: 2vh;
+}
 
 @media screen and (max-width:1000px){
   .mainContainer{

@@ -39,28 +39,7 @@ export const ItemDetail = props => {
 
     const Flag = () => {
         setCFlag(false);
-
-        console.log(cartList)
-
-        console.log(cartList.length)
-
-        // if (cartList.some(data => data['id'] === resultado.id)) {
-
-        //     // console.log('No se puede')
-        //     // let objMod = cartList.find(data =>data['id'] === resultado.id)
-        //     // console.log(objMod)
-        //     // let indexOf = cartList.indexOf(objMod )
-        //     // console.log(indexOf)
-        //     // console.log(cartList[indexOf])
-        //     // const modCantidad = cartList
-        //     // console.log(modCantidad[indexOf])
-        //     // modCantidad[indexOf].cantidad = modCantidad[indexOf].cantidad + contador
-        //     // setCartList(modCantidad)
-
-        // } else {
         setCartList([...cartList, { id: details.id, cantidad: contador, stock: details.stock, img: details.imgs, nombre: details.nombre, precio: details.precio }])
-
-        // }
     }
 
 

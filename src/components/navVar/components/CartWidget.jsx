@@ -21,7 +21,6 @@ const StyledBadge = withStyles((theme) => ({
 const CartWidget = () => {
 
     const {cartCount} = useContext(CartContext)
-    console.log(cartCount)
     
     return (
         <Link to={'/cart'}>

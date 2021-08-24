@@ -55,8 +55,6 @@ export const NavBar = () => {
 
             }
         ]
-    // const Navigation =
-    //     ['Galeria y Portafolio', 'Contactanos']
 
     const [state, setState] = useState({
         mobileView: false,
@@ -87,7 +85,7 @@ export const NavBar = () => {
             </Link>
         );
     };
-    
+
     const displayMobile = () => {
 
         const handleDrawerOpen = () =>
@@ -119,10 +117,6 @@ export const NavBar = () => {
             </Toolbar>
         );
     };
-
-
-
-
 
     return (
         <div>

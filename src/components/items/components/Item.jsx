@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 export const Item = props => {
 
     const { producto } = props
-    console.log(producto.id)
     return (
 
         <div className="itemContainer">
